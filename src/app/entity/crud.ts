@@ -6,11 +6,11 @@ export function getEntityBy(id: number) {
         logo: "having an image in a string just feels weird, this will change",
         socials: [
             {
-                "snetwork": "Facebook",
+                "name": "Facebook",
                 "url": "https://facebook.com/youllneverknow"
             },
             {
-                "snetwork": "Twitter",
+                "name": "Twitter",
                 "url": "hhttps://notevenx.com/youllneverknow"
             }
         ],
@@ -20,13 +20,14 @@ export function getEntityBy(id: number) {
                 "name": "Virtual Realities Ltd.",
                 "description": "Pioneering the virtual world with our cutting-edge VR experiences. Immerse yourself in a reality beyond imagination.",
                 "logo": "virtual_realities_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/virtualrealities"
                     },
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/virtualrealities"
                     }
                 ]
@@ -36,13 +37,14 @@ export function getEntityBy(id: number) {
                 "name": "Pixel Perfect Studios",
                 "description": "Crafting pixel art games that are a feast for the eyes and a joy to play. Every pixel counts.",
                 "logo": "pixel_perfect_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Instagram",
+                        "name": "Instagram",
                         "url": "https://instagram.com/pixelperfect"
                     },
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/pixelperfect"
                     }
                 ]
@@ -52,13 +54,14 @@ export function getEntityBy(id: number) {
                 "name": "Epic Journeys Interactive",
                 "description": "Creating epic adventures and stories that captivate and inspire. Your next journey begins here.",
                 "logo": "epic_journeys_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/epicjourneys"
                     },
                     {
-                        "snetwork": "YouTube",
+                        "name": "YouTube",
                         "url": "https://youtube.com/epicjourneys"
                     }
                 ]
@@ -68,13 +71,14 @@ export function getEntityBy(id: number) {
                 "name": "Quantum Leap Games",
                 "description": "Taking gaming to the next level with our innovative mechanics and quantum-powered narratives.",
                 "logo": "quantum_leap_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/quantumleap"
                     },
                     {
-                        "snetwork": "LinkedIn",
+                        "name": "LinkedIn",
                         "url": "https://linkedin.com/company/quantumleap"
                     }
                 ]
@@ -84,13 +88,14 @@ export function getEntityBy(id: number) {
                 "name": "Infinite Loop Studios",
                 "description": "Developing endlessly enjoyable games that keep players coming back for more.",
                 "logo": "infinite_loop_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Instagram",
+                        "name": "Instagram",
                         "url": "https://instagram.com/infiniteloop"
                     },
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/infiniteloop"
                     }
                 ]
@@ -100,13 +105,14 @@ export function getEntityBy(id: number) {
                 "name": "Mythical Games Inc.",
                 "description": "Bringing myths and legends to life through immersive storytelling and captivating gameplay.",
                 "logo": "mythical_games_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "YouTube",
+                        "name": "YouTube",
                         "url": "https://youtube.com/mythicalgames"
                     },
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/mythicalgames"
                     }
                 ]
@@ -116,13 +122,14 @@ export function getEntityBy(id: number) {
                 "name": "Galactic Adventures",
                 "description": "Exploring the universe, one game at a time. Join us on our galactic adventures.",
                 "logo": "galactic_adventures_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/galacticadventures"
                     },
                     {
-                        "snetwork": "Instagram",
+                        "name": "Instagram",
                         "url": "https://instagram.com/galacticadventures"
                     }
                 ]
@@ -132,13 +139,14 @@ export function getEntityBy(id: number) {
                 "name": "Retro Revolution Games",
                 "description": "Reviving classic gaming with a modern twist. Nostalgia meets innovation.",
                 "logo": "retro_revolution_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/retrorevolution"
                     },
                     {
-                        "snetwork": "YouTube",
+                        "name": "YouTube",
                         "url": "https://youtube.com/retrorevolution"
                     }
                 ]
@@ -148,13 +156,14 @@ export function getEntityBy(id: number) {
                 "name": "Mystic Realms",
                 "description": "Dive into mystical realms filled with wonder, magic, and adventure. Uncover the secrets of the unknown.",
                 "logo": "mystic_realms_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Instagram",
+                        "name": "Instagram",
                         "url": "https://instagram.com/mysticrealms"
                     },
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/mysticrealms"
                     }
                 ]
@@ -164,13 +173,14 @@ export function getEntityBy(id: number) {
                 "name": "Cyberpunk Creations",
                 "description": "Crafting dystopian futures and cyberpunk fantasies. Enter the neon-lit world of tomorrow.",
                 "logo": "cyberpunk_creations_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/cyberpunkcreations"
                     },
                     {
-                        "snetwork": "LinkedIn",
+                        "name": "LinkedIn",
                         "url": "https://linkedin.com/company/cyberpunkcreations"
                     }
                 ]
@@ -180,13 +190,14 @@ export function getEntityBy(id: number) {
                 "name": "Dreamweaver Studios",
                 "description": "Weaving dreams into reality with our enchanting games. Let your imagination soar.",
                 "logo": "dreamweaver_studios_logo.png",
+                "children": [],
                 "socials": [
                     {
-                        "snetwork": "Facebook",
+                        "name": "Facebook",
                         "url": "https://facebook.com/dreamweaver"
                     },
                     {
-                        "snetwork": "Twitter",
+                        "name": "Twitter",
                         "url": "https://twitter.com/dreamweaver"
                     }
                 ]
@@ -204,11 +215,11 @@ export function getAllItems() {
             logo: "having an image in a string just feels weird, this will change",
             socials: [
                 {
-                    "snetwork": "Facebook",
+                    "name": "Facebook",
                     "url": "https://facebook.com/youllneverknow"
                 },
                 {
-                    "snetwork": "Twitter",
+                    "name": "Twitter",
                     "url": "hhttps://notevenx.com/youllneverknow"
                 }
             ],
@@ -220,11 +231,11 @@ export function getAllItems() {
                     "logo": "virtual_realities_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/virtualrealities"
                         },
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/virtualrealities"
                         }
                     ]
@@ -236,11 +247,11 @@ export function getAllItems() {
                     "logo": "pixel_perfect_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Instagram",
+                            "name": "Instagram",
                             "url": "https://instagram.com/pixelperfect"
                         },
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/pixelperfect"
                         }
                     ]
@@ -252,11 +263,11 @@ export function getAllItems() {
                     "logo": "epic_journeys_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/epicjourneys"
                         },
                         {
-                            "snetwork": "YouTube",
+                            "name": "YouTube",
                             "url": "https://youtube.com/epicjourneys"
                         }
                     ]
@@ -268,11 +279,11 @@ export function getAllItems() {
                     "logo": "quantum_leap_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/quantumleap"
                         },
                         {
-                            "snetwork": "LinkedIn",
+                            "name": "LinkedIn",
                             "url": "https://linkedin.com/company/quantumleap"
                         }
                     ]
@@ -284,11 +295,11 @@ export function getAllItems() {
                     "logo": "infinite_loop_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Instagram",
+                            "name": "Instagram",
                             "url": "https://instagram.com/infiniteloop"
                         },
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/infiniteloop"
                         }
                     ]
@@ -300,11 +311,11 @@ export function getAllItems() {
                     "logo": "mythical_games_logo.png",
                     "socials": [
                         {
-                            "snetwork": "YouTube",
+                            "name": "YouTube",
                             "url": "https://youtube.com/mythicalgames"
                         },
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/mythicalgames"
                         }
                     ]
@@ -316,11 +327,11 @@ export function getAllItems() {
                     "logo": "galactic_adventures_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/galacticadventures"
                         },
                         {
-                            "snetwork": "Instagram",
+                            "name": "Instagram",
                             "url": "https://instagram.com/galacticadventures"
                         }
                     ]
@@ -332,11 +343,11 @@ export function getAllItems() {
                     "logo": "retro_revolution_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/retrorevolution"
                         },
                         {
-                            "snetwork": "YouTube",
+                            "name": "YouTube",
                             "url": "https://youtube.com/retrorevolution"
                         }
                     ]
@@ -348,11 +359,11 @@ export function getAllItems() {
                     "logo": "mystic_realms_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Instagram",
+                            "name": "Instagram",
                             "url": "https://instagram.com/mysticrealms"
                         },
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/mysticrealms"
                         }
                     ]
@@ -364,11 +375,11 @@ export function getAllItems() {
                     "logo": "cyberpunk_creations_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/cyberpunkcreations"
                         },
                         {
-                            "snetwork": "LinkedIn",
+                            "name": "LinkedIn",
                             "url": "https://linkedin.com/company/cyberpunkcreations"
                         }
                     ]
@@ -380,11 +391,11 @@ export function getAllItems() {
                     "logo": "dreamweaver_studios_logo.png",
                     "socials": [
                         {
-                            "snetwork": "Facebook",
+                            "name": "Facebook",
                             "url": "https://facebook.com/dreamweaver"
                         },
                         {
-                            "snetwork": "Twitter",
+                            "name": "Twitter",
                             "url": "https://twitter.com/dreamweaver"
                         }
                     ]

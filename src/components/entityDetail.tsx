@@ -1,12 +1,13 @@
 import { getEntityBy } from "@/app/entity/crud"
+import { tEntity, tSocialItem } from "@/app/entity/types";
 
-function SocialEntry({name, link}) {
+function SocialEntry({name, url}: tSocialItem) {
     return (
-        <li><span className="socialName">{name}</span><span className="socialValue"><a href={link}>{link}</a></span></li>
+        <li><span className="socialName">{name}</span><span className="socialValue"><a href={url}>{url}</a></span></li>
     )
 }
 
-function ChildEntity({name, logo, description}) {
+function ChildEntity({name, logo, description}: tEntity) {
     return (
         <div className="singleChild">
             <a href={`/projects/${name}`}>
@@ -18,8 +19,8 @@ function ChildEntity({name, logo, description}) {
     )
 }
 
-export default function EntityDetail() {
-    const entity = getEntityBy(1);
+export default function EntityDetail({id}: {id: number}) {
+    const entity = getEntityBy(id);
 
     return (
         <div className="entityDetail">
@@ -28,7 +29,7 @@ export default function EntityDetail() {
             <section className="social">
                 <ul>
                     {entity.socials.map(entry => {
-                        return (<SocialEntry key={`social_${entity.name}_${entry.snetwork}`} name={entry.snetwork} link={entry.url} />)
+                        return (<SocialEntry key={`social_${entity.name}_${entry.name}`} {...entry} />)
                     })}
                 </ul>
             </section>
