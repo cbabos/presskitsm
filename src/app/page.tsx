@@ -1,4 +1,4 @@
-import EntityDetail from "@/components/entityDetail";
+import EntityDetail from '@/components/entityDetail'
 
 // @todo Using EntityDetail render the root Entity.
 export default function Home() {
@@ -6,5 +6,5 @@ export default function Home() {
         <>
             <EntityDetail id={1} />
         </>
-    );
-};
+    )
+}

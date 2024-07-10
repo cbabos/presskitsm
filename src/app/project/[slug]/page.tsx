@@ -1,7 +1,11 @@
-import EntityDetail from "@/components/entityDetail";
+import EntityDetail from '@/components/entityDetail'
 
-export default function ProjectDetails({params}: {params: {slug: string}}) {
-    const entityId = 2;
+export default function ProjectDetails({
+    params,
+}: {
+    params: { slug: string }
+}) {
+    const entityId = 2
 
     return (
         <>
