@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div>
             <h1>About</h1>
-            <Link href="/">Back to home</Link>
+            <p>TBD...</p>
         </div>
     );
 };
