@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "pretty": "prettier './(src|tests)/**/*.{(j|t)s,(j|t)sx}' --write",
-    "test": "jest --watch --all --coverage",
+    "test": "jest --all --coverage",
     "prepare": "husky"
   },
   "dependencies": {

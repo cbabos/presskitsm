@@ -30,7 +30,13 @@ export default function EntityDetail({ id }: { id: number }) {
 
   return (
     <div className="entityDetail">
-      <Image src={entity.logo} alt="logo" title="logo" width={200} height={100} />
+      <Image
+        src={entity.logo}
+        alt="logo"
+        title="logo"
+        width={200}
+        height={100}
+      />
       <h1>{entity.name}</h1>
       <p>{entity.description}</p>
       <section className="social">
