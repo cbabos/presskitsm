@@ -3,13 +3,13 @@ If you’re creating a game or launching a product, you’re likely familiar wit
 
 To address these challenges and to learn Next.js, I’ve decided to create my own solution with the following features:
 
-	•	A proper admin area to avoid manual file management and XML/JSON/YML editing.
-	•	Secure admin login using MFA.
-	•	A home page for the developer/creator team, listing:
-	•	Team name and introduction
-	•	Social media and contact information
-	•	Latest projects with links
-	•	Latest media (photos and YouTube videos)
+- A proper admin area to avoid manual file management and XML/JSON/YML editing.
+- Secure admin login using MFA.
+- A home page for the developer/creator team, listing:
+- Team name and introduction
+- Social media and contact information
+- Latest projects with links
+- Latest media (photos and YouTube videos)
 
 Clicking on a project provides detailed information similar to the homepage. The structure supports an infinite parent-child connection for flexibility, allowing you to showcase multiple parts of your projects.
 
