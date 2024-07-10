@@ -4,9 +4,10 @@ export type tSocialItem = {
 };
 
 export type tEntity = {
+    id: number,
     name: string,
     description: string,
     logo: string,
     socials: tSocialItem[],
-    children: tEntity[]
+    children?: tEntity[]
 };

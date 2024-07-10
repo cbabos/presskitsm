@@ -1,5 +1,35 @@
+import { isNotFoundError } from "next/dist/client/components/not-found";
+import { tEntity } from "./types";
+
+const flattenData = (allEntities: tEntity[]) => {
+    const flatten = (entities: tEntity[]): tEntity[] => {
+        return entities.reduce((accum: tEntity[], currentEntity: tEntity): tEntity[] => {
+            accum.push(currentEntity);
+            if (currentEntity.children && currentEntity.children.length > 0) {
+                accum = accum.concat(flatten(currentEntity.children));
+            }
+
+            return accum;
+        }, [] as tEntity[])
+    }
+
+    return flatten(allEntities)
+}
+
 export function getEntityBy(id: number) {
-    return {
+    const selectedEntity = flattenData(getAllItems()).find((item) => item.id === id);
+    if (selectedEntity === undefined) {
+        throw new Error(`Entity with id:${id} was not found.`);
+    }
+
+    return selectedEntity;
+}
+
+export function getAllItems(): tEntity[] {
+    return mockData;
+}
+
+const mockData = [{
         id: 1,
         name: "Imaginary Gaming Inc.",
         description: "We are the greatest game developer team in the WORLD, you should be aware of our existence already as we made the one and only Untitled game before even Christ was born!",
@@ -19,8 +49,7 @@ export function getEntityBy(id: number) {
                 "id": 2,
                 "name": "Virtual Realities Ltd.",
                 "description": "Pioneering the virtual world with our cutting-edge VR experiences. Immerse yourself in a reality beyond imagination.",
-                "logo": "virtual_realities_logo.png",
-                "children": [],
+                "logo": "/virtual_realities_logo.png",
                 "socials": [
                     {
                         "name": "Facebook",
@@ -36,8 +65,7 @@ export function getEntityBy(id: number) {
                 "id": 3,
                 "name": "Pixel Perfect Studios",
                 "description": "Crafting pixel art games that are a feast for the eyes and a joy to play. Every pixel counts.",
-                "logo": "pixel_perfect_logo.png",
-                "children": [],
+                "logo": "/pixel_perfect_logo.png",
                 "socials": [
                     {
                         "name": "Instagram",
@@ -53,8 +81,7 @@ export function getEntityBy(id: number) {
                 "id": 4,
                 "name": "Epic Journeys Interactive",
                 "description": "Creating epic adventures and stories that captivate and inspire. Your next journey begins here.",
-                "logo": "epic_journeys_logo.png",
-                "children": [],
+                "logo": "/epic_journeys_logo.png",
                 "socials": [
                     {
                         "name": "Facebook",
@@ -70,8 +97,7 @@ export function getEntityBy(id: number) {
                 "id": 5,
                 "name": "Quantum Leap Games",
                 "description": "Taking gaming to the next level with our innovative mechanics and quantum-powered narratives.",
-                "logo": "quantum_leap_logo.png",
-                "children": [],
+                "logo": "/quantum_leap_logo.png",
                 "socials": [
                     {
                         "name": "Twitter",
@@ -87,8 +113,7 @@ export function getEntityBy(id: number) {
                 "id": 6,
                 "name": "Infinite Loop Studios",
                 "description": "Developing endlessly enjoyable games that keep players coming back for more.",
-                "logo": "infinite_loop_logo.png",
-                "children": [],
+                "logo": "/infinite_loop_logo.png",
                 "socials": [
                     {
                         "name": "Instagram",
@@ -104,8 +129,7 @@ export function getEntityBy(id: number) {
                 "id": 7,
                 "name": "Mythical Games Inc.",
                 "description": "Bringing myths and legends to life through immersive storytelling and captivating gameplay.",
-                "logo": "mythical_games_logo.png",
-                "children": [],
+                "logo": "/mythical_games_logo.png",
                 "socials": [
                     {
                         "name": "YouTube",
@@ -121,8 +145,7 @@ export function getEntityBy(id: number) {
                 "id": 8,
                 "name": "Galactic Adventures",
                 "description": "Exploring the universe, one game at a time. Join us on our galactic adventures.",
-                "logo": "galactic_adventures_logo.png",
-                "children": [],
+                "logo": "/galactic_adventures_logo.png",
                 "socials": [
                     {
                         "name": "Facebook",
@@ -138,8 +161,7 @@ export function getEntityBy(id: number) {
                 "id": 9,
                 "name": "Retro Revolution Games",
                 "description": "Reviving classic gaming with a modern twist. Nostalgia meets innovation.",
-                "logo": "retro_revolution_logo.png",
-                "children": [],
+                "logo": "/retro_revolution_logo.png",
                 "socials": [
                     {
                         "name": "Twitter",
@@ -155,8 +177,7 @@ export function getEntityBy(id: number) {
                 "id": 10,
                 "name": "Mystic Realms",
                 "description": "Dive into mystical realms filled with wonder, magic, and adventure. Uncover the secrets of the unknown.",
-                "logo": "mystic_realms_logo.png",
-                "children": [],
+                "logo": "/mystic_realms_logo.png",
                 "socials": [
                     {
                         "name": "Instagram",
@@ -172,8 +193,7 @@ export function getEntityBy(id: number) {
                 "id": 11,
                 "name": "Cyberpunk Creations",
                 "description": "Crafting dystopian futures and cyberpunk fantasies. Enter the neon-lit world of tomorrow.",
-                "logo": "cyberpunk_creations_logo.png",
-                "children": [],
+                "logo": "/cyberpunk_creations_logo.png",
                 "socials": [
                     {
                         "name": "Twitter",
@@ -189,8 +209,7 @@ export function getEntityBy(id: number) {
                 "id": 12,
                 "name": "Dreamweaver Studios",
                 "description": "Weaving dreams into reality with our enchanting games. Let your imagination soar.",
-                "logo": "dreamweaver_studios_logo.png",
-                "children": [],
+                "logo": "/dreamweaver_studios_logo.png",
                 "socials": [
                     {
                         "name": "Facebook",
@@ -203,204 +222,5 @@ export function getEntityBy(id: number) {
                 ]
             }
         ]
-    };
-}
-
-export function getAllItems() {
-    return [
-        {
-            id: 1,
-            name: "Imaginary Gaming Inc.",
-            description: "We are the greatest game developer team in the WORLD, you should be aware of our existence already as we made the one and only Untitled game before even Christ was born!",
-            logo: "having an image in a string just feels weird, this will change",
-            socials: [
-                {
-                    "name": "Facebook",
-                    "url": "https://facebook.com/youllneverknow"
-                },
-                {
-                    "name": "Twitter",
-                    "url": "hhttps://notevenx.com/youllneverknow"
-                }
-            ],
-            children: [
-                {
-                    "id": 2,
-                    "name": "Virtual Realities Ltd.",
-                    "description": "Pioneering the virtual world with our cutting-edge VR experiences. Immerse yourself in a reality beyond imagination.",
-                    "logo": "virtual_realities_logo.png",
-                    "socials": [
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/virtualrealities"
-                        },
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/virtualrealities"
-                        }
-                    ]
-                },
-                {
-                    "id": 3,
-                    "name": "Pixel Perfect Studios",
-                    "description": "Crafting pixel art games that are a feast for the eyes and a joy to play. Every pixel counts.",
-                    "logo": "pixel_perfect_logo.png",
-                    "socials": [
-                        {
-                            "name": "Instagram",
-                            "url": "https://instagram.com/pixelperfect"
-                        },
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/pixelperfect"
-                        }
-                    ]
-                },
-                {
-                    "id": 4,
-                    "name": "Epic Journeys Interactive",
-                    "description": "Creating epic adventures and stories that captivate and inspire. Your next journey begins here.",
-                    "logo": "epic_journeys_logo.png",
-                    "socials": [
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/epicjourneys"
-                        },
-                        {
-                            "name": "YouTube",
-                            "url": "https://youtube.com/epicjourneys"
-                        }
-                    ]
-                },
-                {
-                    "id": 5,
-                    "name": "Quantum Leap Games",
-                    "description": "Taking gaming to the next level with our innovative mechanics and quantum-powered narratives.",
-                    "logo": "quantum_leap_logo.png",
-                    "socials": [
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/quantumleap"
-                        },
-                        {
-                            "name": "LinkedIn",
-                            "url": "https://linkedin.com/company/quantumleap"
-                        }
-                    ]
-                },
-                {
-                    "id": 6,
-                    "name": "Infinite Loop Studios",
-                    "description": "Developing endlessly enjoyable games that keep players coming back for more.",
-                    "logo": "infinite_loop_logo.png",
-                    "socials": [
-                        {
-                            "name": "Instagram",
-                            "url": "https://instagram.com/infiniteloop"
-                        },
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/infiniteloop"
-                        }
-                    ]
-                },
-                {
-                    "id": 7,
-                    "name": "Mythical Games Inc.",
-                    "description": "Bringing myths and legends to life through immersive storytelling and captivating gameplay.",
-                    "logo": "mythical_games_logo.png",
-                    "socials": [
-                        {
-                            "name": "YouTube",
-                            "url": "https://youtube.com/mythicalgames"
-                        },
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/mythicalgames"
-                        }
-                    ]
-                },
-                {
-                    "id": 8,
-                    "name": "Galactic Adventures",
-                    "description": "Exploring the universe, one game at a time. Join us on our galactic adventures.",
-                    "logo": "galactic_adventures_logo.png",
-                    "socials": [
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/galacticadventures"
-                        },
-                        {
-                            "name": "Instagram",
-                            "url": "https://instagram.com/galacticadventures"
-                        }
-                    ]
-                },
-                {
-                    "id": 9,
-                    "name": "Retro Revolution Games",
-                    "description": "Reviving classic gaming with a modern twist. Nostalgia meets innovation.",
-                    "logo": "retro_revolution_logo.png",
-                    "socials": [
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/retrorevolution"
-                        },
-                        {
-                            "name": "YouTube",
-                            "url": "https://youtube.com/retrorevolution"
-                        }
-                    ]
-                },
-                {
-                    "id": 10,
-                    "name": "Mystic Realms",
-                    "description": "Dive into mystical realms filled with wonder, magic, and adventure. Uncover the secrets of the unknown.",
-                    "logo": "mystic_realms_logo.png",
-                    "socials": [
-                        {
-                            "name": "Instagram",
-                            "url": "https://instagram.com/mysticrealms"
-                        },
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/mysticrealms"
-                        }
-                    ]
-                },
-                {
-                    "id": 11,
-                    "name": "Cyberpunk Creations",
-                    "description": "Crafting dystopian futures and cyberpunk fantasies. Enter the neon-lit world of tomorrow.",
-                    "logo": "cyberpunk_creations_logo.png",
-                    "socials": [
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/cyberpunkcreations"
-                        },
-                        {
-                            "name": "LinkedIn",
-                            "url": "https://linkedin.com/company/cyberpunkcreations"
-                        }
-                    ]
-                },
-                {
-                    "id": 12,
-                    "name": "Dreamweaver Studios",
-                    "description": "Weaving dreams into reality with our enchanting games. Let your imagination soar.",
-                    "logo": "dreamweaver_studios_logo.png",
-                    "socials": [
-                        {
-                            "name": "Facebook",
-                            "url": "https://facebook.com/dreamweaver"
-                        },
-                        {
-                            "name": "Twitter",
-                            "url": "https://twitter.com/dreamweaver"
-                        }
-                    ]
-                }
-            ]
-        },
-    ];    
-}
+    },
+];    

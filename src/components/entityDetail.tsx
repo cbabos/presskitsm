@@ -1,5 +1,6 @@
 import { getEntityBy } from "@/app/entity/crud"
 import { tEntity, tSocialItem } from "@/app/entity/types";
+import Image from 'next/image';
 
 function SocialEntry({name, url}: tSocialItem) {
     return (
@@ -10,8 +11,8 @@ function SocialEntry({name, url}: tSocialItem) {
 function ChildEntity({name, logo, description}: tEntity) {
     return (
         <div className="singleChild">
-            <a href={`/projects/${name}`}>
-                <img src={logo} title="logo" alt="logo" />
+            <a href={`/project/${name}`}>
+                <Image src={logo} title="logo" alt="logo" width={200} height={100} />
                 <span className="title">{name}</span>
                 <p className="shortDescription">{description}</p>
             </a>
@@ -24,7 +25,8 @@ export default function EntityDetail({id}: {id: number}) {
 
     return (
         <div className="entityDetail">
-            <img src="" alt="logo" title="logo" /><h1>{entity.name}</h1>
+            <Image src="" alt="logo" title="logo"  width={200}  height={100} />
+            <h1>{entity.name}</h1>
             <p>{entity.description}</p>
             <section className="social">
                 <ul>
@@ -38,7 +40,7 @@ export default function EntityDetail({id}: {id: number}) {
                 <div className="mediaItem"></div>
             </section>
             <section className="childs">
-                {entity.children.slice(0,4).map(child => <ChildEntity key={`${entity.name}_child_${child.name}`} {...child} />)}
+                {entity.children?.slice(0,4).map(child => <ChildEntity key={`${entity.name}_child_${child.name}`} {...child} />)}
             </section>
         </div>
     )
