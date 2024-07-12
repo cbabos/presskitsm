@@ -5,7 +5,9 @@ export default function ProjectDetails() {
 
   return (
     <>
-      <EntityDetail id={entityId} />
+      <div data-testid="projectDetails">
+        <EntityDetail id={entityId} />
+      </div>
     </>
   );
 }

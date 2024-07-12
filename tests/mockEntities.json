@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Imaginary Gaming Inc.",
     "description": "We are the greatest game developer team in the WORLD, you should be aware of our existence already as we made the one and only Untitled game before even Christ was born!",
-    "logo": "having an image in a string just feels weird, this will change",
+    "logo": "/imaginary_gaming_inc_logo.png",
     "socials": [
       {
         "name": "Facebook",

@@ -4,7 +4,9 @@ import EntityDetail from '@/components/entityDetail';
 export default function Home() {
   return (
     <>
-      <EntityDetail id={1} />
+      <div data-testid="homePage">
+        <EntityDetail id={1} />
+      </div>
     </>
   );
 }
