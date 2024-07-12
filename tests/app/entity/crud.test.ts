@@ -9,9 +9,9 @@ describe('crud', () => {
   });
 
   it('should return the second child of the root entity', () => {
-    const result = getEntityBy(3);
+    const result = getEntityBy(4);
 
-    expect(result).toStrictEqual(mockData[0].children[1]);
+    expect(result).toStrictEqual(mockData[0].children[2]);
   });
 
   it('should throw an error when an item is not found', () => {

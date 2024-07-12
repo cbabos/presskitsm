@@ -31,6 +31,6 @@ jobs:
     - name: Tests
       run: pnpm test
     - name: Approve
-      if: github.actor == 'cbabos'
+      if: github.event_name == 'pull_request' && github.actor == 'cbabos'
       uses: hmarr/auto-approve-action@v4
       
