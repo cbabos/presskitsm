@@ -8,6 +8,8 @@ jobs:
     strategy:
       matrix:
         node-version: [20]
+    permissions:
+        pull-requests: write
     steps:
     - uses: actions/checkout@v4
     - name: Install pnpm
