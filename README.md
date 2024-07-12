@@ -1,3 +1,5 @@
+[![Test runner for PRs](https://github.com/cbabos/presskitsm/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/cbabos/presskitsm/actions/workflows/node.js.yml)
+
 # PressKit SM
 If you’re creating a game or launching a product, you’re likely familiar with the term PressKit. A presskit is an essential resource for newswriters to access information, media, and other materials about you and your product. While tools like doPresskit exist, they can be cumbersome without developer knowledge, requiring manual file management and template editing.
 
