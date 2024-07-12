@@ -11,7 +11,7 @@ const config: Config = {
   coverageProvider: "babel",
   testEnvironment: "jsdom",
   collectCoverage: true,
-  collectCoverageFrom: ['**/*.(j|t)sx'],
+  collectCoverageFrom: ['{src,tests}/**/*.(j|t)s(x)?'],
   coverageThreshold: {
     global: {
       branches: 80,
