@@ -1,15 +1,14 @@
-import Navigation from "@/components/mainNavigation";
+import Navigation from '@/components/mainNavigation';
 
 export default function InnerLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<>
-			<Navigation />
-			<div className={`appContent`}>{children}</div>
-		</>
-	);
+  return (
+    <>
+      <Navigation />
+      <div className={`appContent`}>{children}</div>
+    </>
+  );
 }
-

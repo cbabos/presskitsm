@@ -1,16 +1,17 @@
 import { signIn } from '@/auth';
 
 async function doLogin() {
-  "use server"
+  'use server';
 
-  await signIn("github");
+  await signIn('github');
 }
 
 export default function Login() {
   return (
-    <div className='login'>
+    <div className="login">
       <form action={doLogin}>
         <button>Sign in with GH!</button>
       </form>
-    </div >);
+    </div>
+  );
 }
