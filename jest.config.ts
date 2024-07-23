@@ -9,6 +9,10 @@ const createJestConfig = nextJest({
 // Add any custom config to be passed to Jest
 const config: Config = {
   coverageProvider: "babel",
+  coveragePathIgnorePatterns: [
+    "/node_modules/",
+    "/auth*"
+  ],
   testEnvironment: "jsdom",
   collectCoverage: true,
   collectCoverageFrom: ['{src,tests}/**/*.(j|t)s(x)?'],
