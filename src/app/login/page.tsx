@@ -1,22 +1,25 @@
-import { useFormState } from 'react-hook-form';
+'use client';
+import { useState } from 'react';
+import { handleLogin } from './actions';
 
-const handleAuthentication = async (
-  _currentState: unknown,
-  formData: FormData
-) => {
-  'use server';
-  console.log(_currentState);
-  console.log(formData);
-
-  !!(Math.random() % 2);
-};
-
-function LoginBtn() {
-  return <button type="submit">Log in</button>;
+function LoginBtn({ pending }: { pending: boolean }) {
+  return <>{!pending && <button type="submit">Log in</button>}</>;
 }
 
 export default function Login() {
-  const { ErrorMessage } = useFormState(handleAuthentication);
+  const [error, setError] = useState('');
+  const [pending, setPending] = useState(false);
+
+  const handleAuthentication = async function (formData: FormData) {
+    setPending(true);
+    const success = await handleLogin(
+      formData.get('user') as string,
+      formData.get('password') as string
+    );
+    setError(!success ? 'Invalid username or password' : '');
+    setPending(false);
+  };
+
   return (
     <form className="login" action={handleAuthentication}>
       <input type="text" name="user" placeholder="Your username" required />
@@ -26,8 +29,8 @@ export default function Login() {
         placeholder="Your password"
         required
       />
-      {ErrorMessage && <p className="error">{ErrorMessage}</p>}
-      <LoginBtn />
+      {error && <p>{error}</p>}
+      <LoginBtn pending={pending} />
     </form>
   );
 }
