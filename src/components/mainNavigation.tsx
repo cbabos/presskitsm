@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import LoginBtn from './LoginBtn';
 
 export default function Navigation() {
   return (
@@ -11,7 +12,7 @@ export default function Navigation() {
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/login">Login</Link>
+          <LoginBtn />
         </li>
       </ul>
     </nav>
