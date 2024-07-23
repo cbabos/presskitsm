@@ -6,7 +6,8 @@ export default async function LoginBtn() {
   const label = session === null ? "Log me In" : "Let me out";
   const doAuthAction = async () => {
     'use server';
-    session === null ? await doLogin() : await doLogout();
+    const action = session === null ? doLogin : doLogout;
+    await action();
   }
 
   return (

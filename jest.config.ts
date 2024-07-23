@@ -11,7 +11,8 @@ const config: Config = {
   coverageProvider: "babel",
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "/auth*"
+    "/auth*",
+    "/tests/mocks/"
   ],
   testEnvironment: "jsdom",
   collectCoverage: true,
@@ -23,6 +24,12 @@ const config: Config = {
       lines: 80,
       statements: -10,
     },
+  },
+  moduleNameMapper: {
+    '@/auth': '<rootDir>/tests/mocks/auth.ts',
+    'next-auth/providers/credentials':
+      '<rootDir>/tests/mocks/next-auth-providers-credentials.ts',
+    'next-auth': '<rootDir>/tests/mocks/next-auth.ts',
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
