@@ -1,4 +1,5 @@
-import { InnerLayout, metadata } from '@/app/layout';
+import InnerLayout from '@/app/InnerLayout';
+import { metadata } from '@/app/layout';
 import { render } from '@testing-library/react';
 
 describe('Root layout', () => {
