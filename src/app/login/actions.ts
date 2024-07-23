@@ -2,7 +2,7 @@
 export async function handleLogin(
   username: string,
   password: string
-): Promise<Boolean> {
+): Promise<boolean> {
   if (username === 'cbabos' && password === 'x') return true;
   return false;
 }
