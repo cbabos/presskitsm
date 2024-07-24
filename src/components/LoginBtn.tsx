@@ -1,7 +1,5 @@
 import { auth } from '@/auth';
-import { doLogin, doLogout } from '@/utils/auth/actions';
 import Link from 'next/link';
-import { MouseEventHandler, ReactEventHandler } from 'react';
 
 export function LoginButton({ session }) {
   const label = session === null ? 'Log me In' : 'Let me out';
@@ -18,5 +16,5 @@ export function LoginButton({ session }) {
 
 export default async function LoginBtn() {
   const session = await auth();
-  return (<LoginButton session={session} />);
+  return <LoginButton session={session} />;
 }
