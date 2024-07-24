@@ -4,7 +4,9 @@ import data from '@/../tests/mockEntities.json';
 import { render, screen } from '@testing-library/react';
 
 it('should render the root entity as an EntityDetail', async () => {
-  jest.mock('../../src/components/LoginBtn', () => () => <div>Mocked Component</div>);
+  jest.mock('../../src/components/LoginBtn', () => () => (
+    <div>Mocked Component</div>
+  ));
   const rootEntity: tEntity = data[0];
 
   render(await Home());
@@ -14,4 +16,4 @@ it('should render the root entity as an EntityDetail', async () => {
   const entityName = entityDetail.getElementsByTagName('h1');
   expect(entityName.length).toBe(1);
   expect(entityName[0].textContent).toEqual(rootEntity.name);
-})
+});
