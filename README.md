@@ -1,9 +1,8 @@
-[![Test runner for PRs](https://github.com/cbabos/presskitsm/actions/workflows/node.js.yml/badge.svg?branch=main&event=push)](https://github.com/cbabos/presskitsm/actions/workflows/node.js.yml)
 
 # PressKit SM
 If you’re creating a game or launching a product, you’re likely familiar with the term PressKit. A presskit is an essential resource for newswriters to access information, media, and other materials about you and your product. While tools like doPresskit exist, they can be cumbersome without developer knowledge, requiring manual file management and template editing.
 
-To address these challenges and to learn Next.js, I’ve decided to create my own solution with the following features:
+To address these challenges and to learn, I’ve decided to create my own solution with the following features:
 
 - A proper admin area to avoid manual file management and XML/JSON/YML editing.
 - Secure admin login using MFA.
