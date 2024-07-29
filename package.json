@@ -3,18 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "pretty": "prettier './(src|tests)/**/*.{(j|t)s,(j|t)sx}' --write",
-    "test": "jest --all --coverage",
-    "prepare": "husky"
   },
   "dependencies": {
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -23,22 +13,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/react": "^16.0.0",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
-    "eslint-config-prettier": "^9.1.0",
-    "husky": "^9.1.1",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "next-auth": "5.0.0-beta.19",
     "prettier": "^3.3.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5"
   }
 }
