@@ -1,0 +1,36 @@
+name: Test runner for PRs
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    permissions:
+        pull-requests: write
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    - name: Install dependencies
+      run: pnpm install
+    - name: Lint
+      run: pnpm run lint
+    - name: Tests
+      run: pnpm test -- --run
+    - name: Approve
+      if: github.event_name == 'pull_request' && github.actor == 'cbabos'
+      uses: hmarr/auto-approve-action@v4
+      
