@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -8,6 +8,7 @@ export default defineConfig({
 	test: {
 		coverage: {
 			exclude: [
+				'dist',
 				'src/main.tsx',
 				'.eslint*',
 				'vite.config*',
@@ -23,4 +24,4 @@ export default defineConfig({
 		environment: 'jsdom',
 		setupFiles: [ 'vitest.setup.ts' ],
 	},
-})
+});
