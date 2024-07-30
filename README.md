@@ -1,38 +1,30 @@
+# React + TypeScript + Vite
 
-# PressKit SM
-If you’re creating a game or launching a product, you’re likely familiar with the term PressKit. A presskit is an essential resource for newswriters to access information, media, and other materials about you and your product. While tools like doPresskit exist, they can be cumbersome without developer knowledge, requiring manual file management and template editing.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-To address these challenges and to learn, I’ve decided to create my own solution with the following features:
+Currently, two official plugins are available:
 
-- A proper admin area to avoid manual file management and XML/JSON/YML editing.
-- Secure admin login using MFA.
-- A home page for the developer/creator team, listing:
-- Team name and introduction
-- Social media and contact information
-- Latest projects with links
-- Latest media (photos and YouTube videos)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Clicking on a project provides detailed information similar to the homepage. The structure supports an infinite parent-child connection for flexibility, allowing you to showcase multiple parts of your projects.
+## Expanding the ESLint configuration
 
-Long-term goals include extending this project to manage social media posts, create newsletters, and serve as a comprehensive marketing tool for developers and creators.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
