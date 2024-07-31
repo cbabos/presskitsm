@@ -1,7 +1,12 @@
+import EntityDetails from '../components/EntityDetail';
+import { getEntityBy } from '../utils/entity_crud';
+
 export default function Root() {
+	const rootEntity = getEntityBy(1);
+
 	return (
 		<>
-			<h1>This is the home page</h1>
+			<EntityDetails entity={rootEntity} />
 		</>
 	);
 }
