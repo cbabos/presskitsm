@@ -1,5 +1,6 @@
 import ErrorPage from './errorPage';
 import ProjectDetails from './projectDetails';
+import { loader as projectLoader } from './projectLoader';
 import Root from './rootRoute';
 
 export default [
@@ -10,6 +11,7 @@ export default [
 	},
 	{
 		path: '/details/:project',
-		element: <ProjectDetails />
+		element: <ProjectDetails />,
+		loader: projectLoader, 
 	}
 ];

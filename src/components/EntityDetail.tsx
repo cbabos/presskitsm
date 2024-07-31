@@ -1,4 +1,5 @@
 import { tEntity } from '../types/entity.types';
+import EntityList from './EntityList';
 import SocialLink from './SocialLink';
 
 export default function EntityDetails({entity} : {entity: tEntity}) {
@@ -18,6 +19,9 @@ export default function EntityDetails({entity} : {entity: tEntity}) {
 					);
 				})}
 			</ul>
+			<section role='listbox' className='childlist'>
+				{ entity.children && entity.children.length > 0 && <EntityList limit={5} entities={entity.children} /> }
+			</section>
 		</article>
 	);
 }
