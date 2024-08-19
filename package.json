@@ -34,7 +34,7 @@
     "react-router-dom": "^6.26.0",
     "testing-library": "^0.0.2",
     "typescript": "^5.2.2",
-    "vite": "^5.3.4",
+    "vite": "^5.4.1",
     "vitest": "^2.0.4"
   }
 }
