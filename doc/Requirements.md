@@ -43,8 +43,8 @@ From layout perspective:
 
 - Page (can be a project, or the team itself)
 - Child types
-  - Award
-    News (\* which eventually becomes SN posts as well on publish if requested)
+  - Award (title, img/media[], description, url[]) 
+    News (\* which eventually becomes SN posts as well on publish if requested *\ title, img/media[], description, url[])
     Child contents
     Media
     Contact information (Set<kind,value>)
